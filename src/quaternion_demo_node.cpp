@@ -32,7 +32,7 @@ class QuaternionDemo
       ps.pose.position.x = manipulator_ee[0];
       ps.pose.position.y = manipulator_ee[1];
       ps.pose.position.z = manipulator_ee[2];
-      Eigen::Quaterniond q = rotationVectorToQuaternion(-rotation_vector, angleBetweenTwoVectors(vector1, vector2));
+      Eigen::Quaterniond q =  rotationVectorToQuaternion(-rotation_vector, angleBetweenTwoVectors(vector1, vector2)) * Eigen::Quaterniond(0.7071, 0, 0, 0.7071);
       ps.pose.orientation.w = q.w();
       ps.pose.orientation.x = q.x();
       ps.pose.orientation.y = q.y();
